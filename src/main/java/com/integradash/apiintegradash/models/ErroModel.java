@@ -3,11 +3,12 @@ package com.integradash.apiintegradash.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -21,6 +22,8 @@ public class ErroModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
+    private UUID id;
+
     private String nomeerro;
 
     // @DateTimeFormat(pattern = "dd/MM/yyyy")

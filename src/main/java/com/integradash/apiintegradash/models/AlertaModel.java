@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.UUID;
 
 @Getter
@@ -25,9 +26,11 @@ public class AlertaModel implements Serializable {
 
     private String nomealerta;
     private String nivel_criticidade;
-    private String data_alerta; // datetime alterar
+
     private String status_alerta;
     private String descricao_alerta;
+    @Temporal(TemporalType.DATE)
+    private Date data_alerta;
 
     @OneToOne
     @JoinColumn(name = "id_erro", referencedColumnName = "id")

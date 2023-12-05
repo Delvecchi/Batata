@@ -39,7 +39,7 @@ public class ErroController {
 
     @PostMapping
     public ResponseEntity<Object> cadastrarErro(@RequestBody @Valid ErroDto erroDto) {
-        if ( erroRepository.findBynomeerro(erroDto.nomeerro()) != null ) {
+        if ( erroRepository.findByNomeerro(erroDto.nomeerro()) != null ) {
             // Não pode cadastrar
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Esse erro já está cadastrado");
         }
